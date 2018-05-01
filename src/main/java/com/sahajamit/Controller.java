@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -14,7 +16,8 @@ import java.util.List;
 public class Controller {
 
     private List<TodoItem> todoItems;
-
+    @FXML
+    private GridPane gridPane;
     @FXML
     private ListView<TodoItem> todoListView;
 
@@ -42,6 +45,8 @@ public class Controller {
 
         todoListView.getItems().setAll(todoItems);
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        gridPane.setPrefSize(900, 300);
+        gridPane.setMaxSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
     }
 
     @FXML
