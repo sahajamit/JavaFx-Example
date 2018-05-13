@@ -1,7 +1,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
-<!--<BorderPane fx:controller="com.sahajamit.Controller"-->
+<!--<BorderPane fx:controller="com.sahajamit.MainControllerller"-->
             <!--xmlns:fx="http://javafx.com/fxml">-->
     <!--<left>-->
         <!--<ListView fx:id="todoListView" onMouseClicked="#handleClickListView">-->
@@ -17,10 +17,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:id="gridPane" fx:controller="com.sahajamit.Controller" xmlns:fx="http://javafx.com/fxml" alignment="BASELINE_CENTER"
+<GridPane fx:id="gridPane" fx:controller="com.sahajamit.MainController" xmlns:fx="http://javafx.com/fxml" alignment="BASELINE_CENTER"
           hgap="2" vgap="2">
     <ToolBar fx:id="toolbar" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2" prefWidth="Infinity">
-        <Button fx:id="playBtn" text="Play">
+        <Button fx:id="playBtn" text="Play" onMouseClicked="#handlePlayButtonClick">
 
         </Button>
         <Button fx:id="stopBtn" text="Stop">

@@ -8,12 +8,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Controller {
+public class MainController {
 
     private List<TodoItem> todoItems;
     @FXML
@@ -58,7 +59,11 @@ public class Controller {
         sb.append("Due: ");
         sb.append(item.getDeadline().toString());
         itemDetailsTextArea.setText(sb.toString());
+    }
 
-
+    @FXML
+    public void handlePlayButtonClick() throws IOException {
+        boolean result = new ChildController().display("Warning", "Are you sure!!!");
+        System.out.println(result);
     }
 }
