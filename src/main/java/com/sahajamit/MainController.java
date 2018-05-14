@@ -2,6 +2,7 @@ package com.sahajamit;
 
 import com.sahajamit.model.TodoItem;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
@@ -63,7 +64,11 @@ public class MainController {
 
     @FXML
     public void handlePlayButtonClick() throws IOException {
-        boolean result = new ChildController().display("Warning", "Are you sure!!!");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/childWindow.fxml"));
+        fxmlLoader.load();
+        ChildController childController = fxmlLoader.getController();
+        boolean result = childController.display("Warning", "Are you sure!!!");
         System.out.println(result);
     }
 }

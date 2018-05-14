@@ -18,20 +18,22 @@ public class ChildController {
     private boolean answer;
     private Stage stage;
     @FXML
+    private GridPane gridPane;
+    @FXML
     private Button yesBtn;
     @FXML
     private Button noBtn;
 
 
     public boolean display(String title, String message) throws IOException {
-        GridPane gridPane = FXMLLoader.load(getClass().getResource("/childWindow.fxml"));
+//        GridPane gridPane = FXMLLoader.load(getClass().getResource("/childWindow.fxml"));
         stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle(title);
         stage.setScene(new Scene(gridPane, 500, 400));
-        yesBtn = (Button) gridPane.getChildren().get(1);
-        noBtn = (Button) gridPane.getChildren().get(2);
+//        yesBtn = (Button) gridPane.getChildren().get(1);
+//        noBtn = (Button) gridPane.getChildren().get(2);
         setButtonHandlers();
 
         stage.showAndWait();
